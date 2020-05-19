@@ -7,17 +7,25 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+User.create!(
+    email: "carlos@mail.com",
+    password: "llllllll"
+)
+
 Potager.create!(
   name: "La vache",
-image_url: "https://source.unsplash.com/farm/potagers/lavache.jpg",
+img_url: "https://source.unsplash.com/farm/potagers/lavache.jpg",
+user: User.first
 )
 
 Potager.create!(
   name: "La carotte",
-  image_url: "https://source.unsplash.com/farm/potagers/lacarotte.jpg",
+  img_url: "https://source.unsplash.com/farm/potagers/lacarotte.jpg",
+  user: User.first
 )
 
 Potager.create!(
   name: "Fermex",
-  image_url: "https://source.unsplash.com/farm/potagers/fermex.jpg",
+  img_url: "https://source.unsplash.com/farm/potagers/fermex.jpg",
+  user: User.first
 )
