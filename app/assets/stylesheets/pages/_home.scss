@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+
+.background-img {
+    opacity: 0,5;
+    background-color: black;
+    //background-image: url(asset-path("jardins-partages.jpg"));
+    border-radius: 4px;                        /* Small radius */
+    box-shadow: 0 10px 30px rgba(0,0,0,.1); 
+    background-image: linear-gradient(rgba(251, 243, 130, 0.76),rgba(239, 251, 69, 0.4)), url(asset-path("jardins-partages.jpg"));
+
+
+}
+
+.btn-success {
+    color: white !important;
+}

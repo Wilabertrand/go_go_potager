@@ -1,2 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class='background-img'>
+    <h1>GO GO POTAGER</h1>
+    <p>Propriétaires, vous avez un jardin mais vous n'avez ni le temps ni l'envie de le cultiver ? Jardiniers, vous aimeriez cultiver un potager mais vous n'avez pas de jardin ? Rencontrez-vous et partagez les récoltes ! C’est un échange convivial et gagnant-gagnant ouvert à tous.
+    </p>
+    <%= link_to 'Tous nos potagers', potagers_path, class:"btn btn-success" %>
+</div>
+    <div class='cards'>
+        <div class='card-potager'>
+            <%= image_tag "potager1.jpg", class:'card-img' %>
+            <p>Un bien joli potager prêt à être béché</p>
+        </div>
+        <div class='card-potager'>
+         <%= image_tag "potager2.jpg", class:'card-img' %>
+            <h2>Potager joli</h2>
+            <p>Un bien joli potager prêt à être béché</p>
+        </div>
+        <div class='card-potager'>
+            <%= image_tag "potager3.jpeg", class:'card-img'  %>
+            <h2>Potager urbain</h2>
+            <p>Un bien joli potager prêt à être béché</p>
+    </div>
+
+</div>
+
