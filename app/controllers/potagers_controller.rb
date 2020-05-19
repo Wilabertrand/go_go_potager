@@ -1,11 +1,30 @@
 class PotagersController < ApplicationController
 
 def index
-  @potagers = Potagers.all
+  @potagers = Potager.all
+end
+
+def new
+  @potager = Potager.new
 end
 
 def show
-  @potager = Potagers.find(params[:id])
+  @potager = Potager.find(params[:id])
 end
+
+def create
+  @potager = Potager.new(params[:potager])
+  if @potager.save
+    flash[:success] = "Votre potager est maintenant disponible"
+    redirect_to @potager
+  else
+    flash[:error] = "Quelque chose ne s'est pas passé comme prévu"
+    render 'new'
+  end
+end
+
+private
+
+
 
 end
