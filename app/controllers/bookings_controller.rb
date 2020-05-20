@@ -1,14 +1,15 @@
 class BookingsController < ApplicationController
+	skip_before_action :authenticate_user!, only: [:new]
 
-  def index
-		@bookings = current_user.bookings
-	end
+  # def index
+	# 	@bookings = current_user.bookings
+  # end
 	
-	def new
-		@booking = Booking.new
-	end
+  # def new
+	# 	@booking = Booking.new
+  # end
 	
-	def create
+ 	def create
 		@potager = Potager.find(params[:potager_id])
 		@booking = Booking.new(booking_params)
 		@booking.potager = @potager
@@ -28,7 +29,7 @@ class BookingsController < ApplicationController
     redirect_to bookings_path(@booking.potager)
 	end
 		
-	Private
+private
 
   def booking_params
     params.require(:booking).permit(:potager, :user)
