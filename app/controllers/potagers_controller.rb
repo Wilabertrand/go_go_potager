@@ -41,12 +41,11 @@ class PotagersController < ApplicationController
     end
 
   def destroy
+    @potager = Potager.find(params[:id])
     @potager.destroy
-    respond_to do |format|
-        format.html { redirect_to potagers_url, notice: 'Potager was successfully destroyed.' }
-        format.json { head :no_content }
-      end
+    redirect_to root_path
   end
+
 
   private
 
@@ -58,5 +57,5 @@ class PotagersController < ApplicationController
    def set_potager
       @potager = Potager.find(params[:id])
    end
- 
+
 end
