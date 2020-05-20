@@ -1,14 +1,11 @@
 .card-potager {
     background-size: cover;
     background-position: center;
-    height: 180px;
+    height: 150px;
     width: 300px;
     margin: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 24px;
+    color: black;
+    font-size: 12px;
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     border-radius: 5px;
@@ -22,6 +19,6 @@
 }
 
 .card-img {
-    width: 200px;
+    width: 300px;
     height: 100px;
 }

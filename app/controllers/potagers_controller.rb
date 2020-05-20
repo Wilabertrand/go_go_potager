@@ -46,7 +46,16 @@ def destroy
 end
 
 private
+<<<<<<< HEAD
   def potager_params
     params.require(:potager).permit(:name, :address, :price, :surface, :photo)
   end
+=======
+  
+def potager_params
+  params.require(:potager).permit(:name, :address, :price, :surface, :photo)
+end
+
+
+>>>>>>> master
 end
