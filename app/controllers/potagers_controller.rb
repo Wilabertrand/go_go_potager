@@ -1,4 +1,5 @@
 class PotagersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
 def index
   @potagers = Potager.all
@@ -13,7 +14,8 @@ def show
 end
 
 def create
-  @potager = Potager.new(params[:potager])
+  @potager = Potager.new(potager_params)
+  @potager.user = current_user
   if @potager.save
     flash[:success] = "Votre potager est maintenant disponible"
     redirect_to @potager
