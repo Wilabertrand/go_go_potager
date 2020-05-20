@@ -1,4 +1,6 @@
 class DashboardsController < ApplicationController
-  def show
+  def dashboard
+    @potagers = current_user.potagers
+    @bookings = current_user.bookings
   end
 end

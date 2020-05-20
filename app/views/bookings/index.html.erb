@@ -1,4 +1,4 @@
-<h1>TES RESERVATIONS</h1>
+<h1>TES RESERVATIONS JFT</h1>
 
 <table>
   <thead>
@@ -10,14 +10,14 @@
   </thead>
 
   <tbody>
-    <% @potager.bookings.each do |potager.booking| %>
+    <% @bookings.each do |booking| %>
       <tr>
-        <td><%= potager.name %></td>
-        <% if potager.photo.attached? %>
-          <td><%= cl_image_tag potager.photo.key %></td>
+        <td><%= booking.potager.name %></td>
+        <% if booking.potager.photo.attached? %>
+          <td><%= cl_image_tag booking.potager.photo.key %></td>
         <% end %>
-        <td><%= link_to 'Show', potager %></td>
-        <td><%= link_to 'Destroy', potager, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', potager_path(booking.potager) %></td>
+        <td><%= link_to 'Destroy', potager_path(booking.potager), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

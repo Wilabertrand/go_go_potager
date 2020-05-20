@@ -1,12 +1,12 @@
 class BookingsController < ApplicationController
 
-  def index
-		@bookings = current_user.bookings
-  end
+  # def index
+	# 	@bookings = current_user.bookings
+  # end
 	
-  def new
-		@booking = Booking.new
-  end
+  # def new
+	# 	@booking = Booking.new
+  # end
 	
  	def create
 		@potager = Potager.find(params[:potager_id])
