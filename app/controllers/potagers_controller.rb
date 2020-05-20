@@ -1,4 +1,5 @@
 class PotagersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
 def index
   @potagers = Potager.all
@@ -24,9 +25,10 @@ def create
 end
 
 private
-  def potager_params
-    params.require(:potager).permit(:name, :address, :price, :surface, :photo)
-  end
+  
+def potager_params
+  params.require(:potager).permit(:name, :address, :price, :surface, :photo)
+end
 
 
 end
