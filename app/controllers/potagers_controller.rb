@@ -23,10 +23,28 @@ def create
   end
 end
 
+def update
+    respond_to do |format|
+      if @potager.update(potager_params)
+        format.html { redirect_to @potager, notice: 'Potager was successfully updated.' }
+        format.json { render :show, status: :ok, location: @potager }
+      else
+        format.html { render :edit }
+        format.json { render json: @potager.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+def destroy
+  @potager.destroy
+  respond_to do |format|
+      format.html { redirect_to potagers_url, notice: 'Potager was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+end
+
 private
   def potager_params
     params.require(:potager).permit(:name, :address, :price, :surface, :photo)
   end
-
-
 end
