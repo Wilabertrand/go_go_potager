@@ -1,4 +1,3 @@
-<h1>LES POTAGERS</h1>
 
 <%# <ul>
   <% @potagers.each do |potager| %>
@@ -7,26 +6,31 @@
 <%# </ul> %>
 
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Banner url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @potagers.each do |potager| %>
-      <tr>
-        <td><%= potager.name %></td>
-        <% if potager.photo.attached? %>
-          <td><%= cl_image_tag potager.photo.key %></td>
-        <% end %>
-        <td><%= link_to 'Show', potager %></td>
-        <td><%= link_to 'Edit', edit_potager_path(potager) %></td>
-        <td><%= link_to 'Destroy', potager, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+      <table>
+        <h1>LES POTAGERS</h1>
+        <thead>
+          <tr>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @potagers.each do |potager| %>
+            <tr>
+              <td><%= potager.name %></td>
+              <% if potager.photo.attached? %>
+                <td><%= cl_image_tag potager.photo.key %></td>
+              <% end %>
+              <td><%= link_to 'Show', potager %></td>
+              <td><%= link_to 'Edit', edit_potager_path(potager) %></td>
+              <td><%= link_to 'Destroy', potager, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

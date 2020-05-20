@@ -6,15 +6,16 @@ class PotagersController < ApplicationController
     @potagers = Potager.all
   end
 
-  def show
-  end
 
-  def new
-    @potager = Potager.new
+  def show
+    @booking = Booking.new
+    @potager = Potager.find(params[:id])
   end
 
   def create
-    if @potager.save(potager_params)
+    @potager = Potager.new(potager_params)
+    @potager.user = current_user
+    if @potager.save
       flash[:success] = "Votre potager est maintenant disponible"
       redirect_to @potager
     else
@@ -23,34 +24,39 @@ class PotagersController < ApplicationController
     end
   end
 
-  def edit
-  end
+    def new
+      @potager = Potager.new
+    end
 
   def update
-    if @potager.update(potager_params)
-      flash[:success] = "Votre potager a été modifié"
-      redirect_to @potager
-    else
-      flash[:error] = "Quelque chose ne s'est pas passé comme prévu"
-      render 'new'
+      respond_to do |format|
+        if @potager.update(potager_params)
+          format.html { redirect_to @potager, notice: 'Potager was successfully updated.' }
+          format.json { render :show, status: :ok, location: @potager }
+        else
+          format.html { render :edit }
+          format.json { render json: @potager.errors, status: :unprocessable_entity }
+        end
+      end
     end
-  end
 
   def destroy
     @potager.destroy
-    flash[:success] = "Votre potager a été supprimé"
-    redirect_to @potagers
+    respond_to do |format|
+        format.html { redirect_to potagers_url, notice: 'Potager was successfully destroyed.' }
+        format.json { head :no_content }
+      end
   end
-
 
   private
 
-  def set_potager
-    @potager = Potager.find(params[:id])
-  end
-  
   def potager_params
-    params.require(:potager).permit(:name, :address, :description, :price, :surface, :img_url, :user_id)
+    params.require(:potager).permit(:name, :address, :price, :surface, :photo)
   end
 
+
+   def set_potager
+      @potager = Potager.find(params[:id])
+   end
+ 
 end

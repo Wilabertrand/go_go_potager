@@ -1,0 +1,31 @@
+<div class="container">
+
+  <h1>Booke ton potager JFT</h1>
+  <%= simple_form_for [@potager, @booking] do |f| %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+  <h1><%= @potager.name %></h1>
+  <%= link_to "Back to all potagers", potagers_path %>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <div class='cards'>
+
+              <div class='card-potager'>
+                  <%= image_tag @potager.img_url, class:'card-img' %>
+                  <p>
+                  <%= @potager.name  %>
+                  <%= @potager.description  %>
+                  <%= @potager.address %>
+                  <%= @potager.price %>
+                  <%= @potager.surface %>
+                  </p>
+              </div>
+      </div>
+    </div>
+  </div>
+
+  <%#= render "new", potager: @potager, review: @review %>
+
+
+</div>
