@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
 			redirect_to @potager 
 		else
 			flash[:error] = "Quelque chose ne s'est pas passé comme prévu"
-			render 'new'
+			render :new
 		end
 	end
 
