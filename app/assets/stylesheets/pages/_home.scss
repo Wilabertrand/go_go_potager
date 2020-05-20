@@ -1,4 +1,7 @@
 // Specific CSS for your home-page
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+</style>
 
 .background-img {
     opacity: 0,5;
@@ -13,4 +16,16 @@
 
 .btn-success {
     color: white !important;
+}
+
+h1 {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 60px;
+    color: white;
+}
+
+p {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 20px;
+    color: white;
 }

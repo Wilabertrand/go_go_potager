@@ -5,19 +5,15 @@
     <%= link_to 'Tous nos potagers', potagers_path, class:"btn btn-success" %>
 </div>
     <div class='cards'>
-        <div class='card-potager'>
-            <%= image_tag "potager1.jpg", class:'card-img' %>
-            <p>Un bien joli potager prêt à être béché</p>
-        </div>
-        <div class='card-potager'>
-         <%= image_tag "potager2.jpg", class:'card-img' %>
-            <h2>Potager joli</h2>
-            <p>Un bien joli potager prêt à être béché</p>
-        </div>
-        <div class='card-potager'>
-            <%= image_tag "potager3.jpg", class:'card-img'  %>
-            <h2>Potager urbain</h2>
-            <p>Un bien joli potager prêt à être béché</p>
+        <% @potagers.each do |potager| %>
+            <div class='card-potager'>
+                <%= image_tag potager.img_url, class:'card-img' %>
+                <p>
+                <%= potager.name  %>
+                <%= potager.description  %>
+                </p>
+            </div>
+        <% end %>
     </div>
 
 </div>
