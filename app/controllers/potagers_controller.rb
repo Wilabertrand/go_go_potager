@@ -1,5 +1,6 @@
 class PotagersController < ApplicationController
   before_action :set_potager, only: [:edit, :update, :show, :destory]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @potagers = Potager.all
@@ -47,7 +48,7 @@ class PotagersController < ApplicationController
   def set_potager
     @potager = Potager.find(params[:id])
   end
-
+  
   def potager_params
     params.require(:potager).permit(:name, :address, :description, :price, :surface, :img_url, :user_id)
   end

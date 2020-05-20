@@ -5,3 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+User.create!(
+    email: "carlos@mail.com",
+    password: "llllllll"
+)
+
+Potager.create!(
+  name: "La vache",
+img_url: "https://source.unsplash.com/farm/potagers/lavache.jpg",
+user: User.first
+)
+
+Potager.create!(
+  name: "La carotte",
+  img_url: "https://source.unsplash.com/farm/potagers/lacarotte.jpg",
+  user: User.first
+)
+
+Potager.create!(
+  name: "Fermex",
+  img_url: "https://source.unsplash.com/farm/potagers/fermex.jpg",
+  user: User.first
+)
