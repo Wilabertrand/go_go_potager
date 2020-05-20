@@ -58,5 +58,5 @@ class PotagersController < ApplicationController
    def set_potager
       @potager = Potager.find(params[:id])
    end
- 
+
 end
