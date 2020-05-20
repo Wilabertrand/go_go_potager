@@ -2,13 +2,13 @@ class BookingsController < ApplicationController
 
   def index
 		@bookings = current_user.bookings
-	end
+  end
 	
-	def new
+  def new
 		@booking = Booking.new
-	end
+  end
 	
-	def create
+ 	def create
 		@potager = Potager.find(params[:potager_id])
 		@booking = Booking.new(booking_params)
 		@booking.potager = @potager
@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
     redirect_to bookings_path(@booking.potager)
 	end
 		
-	Private
+private
 
   def booking_params
     params.require(:booking).permit(:potager, :user)
