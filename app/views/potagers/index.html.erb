@@ -1,5 +1,5 @@
 
-    <div class="container">
+    <div class="container, background-color">
       <h1>Découvrez nos espaces à cultiver <i class="fas fa-leaf"></i></h1>
       <div class="potager-grid">
         <% @potagers.each do |potager| %>
@@ -12,10 +12,11 @@
             <% end %>
             <div class="card-trip-infos">
               <h2><%= potager.name %></h2>
-              <p><%= potager.surface %></p>
-              <p><%= potager.description.truncate(30)%>
-              <p class="card-trip-pricing"><%= potager.price %></p>
-            </div>
+              <h3><%= potager.surface %> à cultiver</h3>
+              <p><%= potager.description.truncate(25)%>
+              <p class="card-trip-pricing"><%= potager.price%>€/mois</p>
+              <p> <i class="far fa-heart"></i></p>
+              </div>
           </div>
           <%end%>
         <% end %>
