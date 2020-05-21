@@ -15,29 +15,29 @@ User.create!(
     password: "llllllll"
 )
 Potager.create!(
-  name: "La vache",
-  address: '12 rue Georges Hamon, 29180, Locronan',
-  description: "lorem",
+  name: "Magnifique potager",
+  address: 'Paris',
+  description: "Un très beau potager ensoleillé",
   surface: '12m2',
-  price: '5€/m2',
+  price: '30€/m2',
   img_url: "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
   user: User.first
 )
 Potager.create!(
-  name: "La carotte",
-  address: '12 rue Georges Hamon, 29180, Locronan',
-  description: "lorem",
-  surface: '12m2',
-  price: '5€/m2',
+  name: "Les jonquilles",
+  address: 'Saint-Maur',
+  description: "Un magnifique jardin prêt à planter",
+  surface: '24m2',
+  price: '10€/m2',
   img_url: "https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
   user: User.first
 )
 Potager.create!(
   name: "Fermex",
-  address: '12 rue Georges Hamon, 29180, Locronan',
-  description: "lorem",
-  surface: '12m2',
+  address: 'Marcilly',
+  description: "un pré de 1000m2, prêt à béché",
+  surface: '1000m2',
   price: '5€/m2',
-  img_url: "https://images.unsplash.com/photo-1557429287-b2e26467fc2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80",
+  img_url: "https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
   user: User.first
 )
