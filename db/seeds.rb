@@ -5,8 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 Booking.destroy_all
 puts 'booking destroyed'
+Booking.destroy_all
+puts 'potager destroyed'
 Potager.destroy_all
 puts 'potager destroyed'
 User.destroy_all
