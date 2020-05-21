@@ -1,13 +1,14 @@
 <div class="container">
+	<br>
 	<h1>Mes réservations</h1>
 	<br>
 	<div class="sumup">
 		<% @bookings.each do |booking| %>
-  				<div class="card-booking-infos-dashboard-sumup">
-					<%= cl_image_tag booking.potager.photo.key, class:'card-booking-dashboard-img-sumup' %>
+			<div class="cards-sumup">
+				<%= cl_image_tag booking.potager.photo.key, class:'card-booking-img-sumup' %>
+				<div class="card-booking-infos-sumup">
       				<h2><%= booking.potager.name %></h2>
-					<h2><%= booking.potager.price %>€</h2>
-					<h2><%= "du  au " %></h2>
+					<p><%= "Réservé du  au " %></p>
 				</div>
 			</div>
 		<% end %>
@@ -49,5 +50,5 @@
 		<% end %>
     	<%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
   	</div>
-  	<%= link_to 'Créez un nouveau potager', new_potager_path, class:"btn-blue" %>
+  	<%= link_to 'Créez un nouveau potager', new_potager_path, class:"btn btn-primary" %>
 </div>

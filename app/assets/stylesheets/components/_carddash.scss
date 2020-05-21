@@ -10,6 +10,7 @@
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
 }
 
 .cards-dashboard {
@@ -41,6 +42,7 @@
     font-size: 16px;
     font-weight: bold;
     margin: 0;
+    margin-top: 5px;
   }
   
   .card-potager-dashboard p {
@@ -66,29 +68,30 @@
 //   }
 
 
-.sumup {
-    height: 50px;
-    width: 600px;
+.cards-sumup {
+    display: flex;
+    height: 70px;
+    width: 800px;
     overflow: hidden;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
-.card-booking-infos-dashboard-sumup h2 {
-    font-size: 16px;
+.card-booking-infos-sumup h2 {
+    font-size: 24px;
     font-weight: bold;
     margin: 0;
   }
   
-  .card-booking-infos-dashboard-sumup p {
-    font-size: 12px;
+  .card-booking-infos-sumup p {
+    font-size: 16px;
     opacity: .7;
     margin: 0;
   }
   
   
-  .card-booking-dashboard-sumup .card-booking-infos-dashboard-sumup {
+  .card-booking-sumup .card-booking-infos-sumup {
     padding: 16px;
     display: flex;
     justify-content: space-between;
@@ -96,8 +99,9 @@
     position: relative;
   }
 
-  .card-booking-dashboard-img-sumup {
-    height: 50px;
-    width: 50px;
+  .card-booking-img-sumup {
+    height: 70px;
+    width: 70px;
     object-fit: cover;
+    margin-right: 40px;
   }

@@ -11,9 +11,10 @@ class BookingsController < ApplicationController
 
  	def create
 		@potager = Potager.find(params[:potager_id])
-		@booking = Booking.new
+		@booking = Booking.new(booking_params)
 		@booking.potager = @potager
 		@booking.user = current_user
+		raise
 		if @booking.save
 			flash[:success] = "Votre potager est maintenant réservé"
 			redirect_to dashboard_path
@@ -32,7 +33,7 @@ class BookingsController < ApplicationController
 	private
 
 	def booking_params
-  		params.require(:booking).permit(:potager, :user)
+  		params.require(:booking).permit(:potager, :user, :start_date, :end_date)
 	end
 
 end
