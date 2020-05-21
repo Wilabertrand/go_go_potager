@@ -3,14 +3,82 @@
 .background-img {
   //background-image: url(asset-path("jardins-partages.jpg"));
   border-radius: 4px;                        /* Small radius */
-  box-shadow: 0 10px 30px rgba(0,0,0,.1); 
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
   background-image: linear-gradient(rgba(8, 8, 8, 0.4),rgba(54, 65, 8, 0.4)), url(asset-path("jardins-partages.jpg"));
   color : white;
-	padding: 40px; 
+  padding: 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 	// background-size: cover;
 	// width: 100%;
 }
 
 .banner {
-	padding-left: 150px;
+  background-size: cover;
+  width: auto;
 }
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.cards {
+  padding: 35px;
+  padding-top: 60px;
+  align-content: space-between;
+}
+
+.card-potager {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.card-potager > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-potager h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+// .card-trip p {
+//   font-size: 12px;
+//   opacity: .7;
+//   margin: 0;
+// }
+
+
+// .card-trip .card-trip-infos {
+//   padding: 16px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-end;
+//   position: relative;
+// }
+
+// .card-trip-infos .card-trip-user {
+//   position: absolute;
+//   right: 16px;
+//   top: -20px;
+//   width: 40px;
+// }
+
+
