@@ -1,30 +1,49 @@
 <div class="container">
+	<br>
+	<br>
 	<h1>Mes réservations</h1>
-	<div class="cards">
+	<br>
+	<div class="sumup">
 		<% @bookings.each do |booking| %>
-			<div class="card-potager">
-				<%= booking.potager.name %>
-				<% if booking.potager.photo.attached? %>
-					<%= cl_image_tag booking.potager.photo.key, class:'card-img' %>
-				<% end %>
-				<%= link_to 'Voir', potager_path(booking.potager) %>
-				<%#= link_to 'Destroy', potager_path(booking.potager), method: :delete, data: { confirm: 'Etes-vous sûr?' } %>
+			<div class="cards-sumup">
+				<%= cl_image_tag booking.potager.photo.key, class:'card-booking-img-sumup' %>
+				<div class="card-booking-infos-sumup">
+      				<h2><%= booking.potager.name %></h2>
+					<h2>Réservé du <%= booking.start_date %> au <%= booking.end_date %></h2>
+					<p><%= link_to 'Voir', potager_path(booking.potager) %></p>
+				</div>
 			</div>
 		<% end %>
 	</div>
-	<h1>Mes potagers à louer</h1>
+	<br>
+	<h1>Mes potagers en location</h1>
+	<br>
+	<br>
 	<div class="cards">
 		<% @potagers.each do |potager| %>
-			<div class="card-potager">
-				<%= potager.name %>
-				<% if potager.photo.attached? %>
-					<%= cl_image_tag potager.photo.key, class:'card-img' %>
+			<div class="card-potager-dashboard">
+  				<% if potager.photo.attached? %>
+					<%= cl_image_tag potager.photo.key, class:'card-potager-dashboard-img' %>
+  					<div class="card-potager-infos-dashboard">
+    					<div>
+      						<h2><%= potager.name %></h2>
+      						<h2><%= link_to 'Voir', potager_path(potager) %></h2>
+							<h2><%= link_to 'Modifier', edit_potager_path(potager) %></h2> 
+                			<h2><%= link_to 'Supprimer', potager_path(potager), method: :delete, data: { confirm: 'Etes-vous sûr?' } %></h2> 
+    					</div>
+    					<h2 class="card-potager-pricing-dashboard">€<%= potager.price %></h2>
+					</div>
 				<% end %>
-				<%= link_to 'Voir', potager_path(potager) %>
-				<%= link_to 'Modifier', edit_potager_path(potager) %>
-				<%= link_to 'Supprimer', potager_path(potager), method: :delete, data: { confirm: 'Etes-vous sûr?' } %>
 			</div>
 		<% end %>
+    	<%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+  	</div>
+	<br>
+	<br>
+	<div class="btn-bottom-dashboard">
+  		<%= link_to 'Créez un nouveau potager', new_potager_path, class:"btn btn-primary" %>
 	</div>
-	<%= link_to 'Créez un nouveau potager', new_potager_path, class:"btn-blue" %>
+	<br>
+	<br>
+	<br>
 </div>

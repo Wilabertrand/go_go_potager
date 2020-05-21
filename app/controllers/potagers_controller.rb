@@ -3,12 +3,22 @@ class PotagersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @potagers = Potager.all
+    @potagers = Potager.geocoded
+    @markers = @potagers.map do |potager|
+      { lat: potager.latitude, lng: potager.longitude }
+    end
+    if params[:query].present?
+      @potagers = Potager.global_search(params[:query])
+    else
+      @potagers = Potager.all
+    end
   end
 
 
   def show
     @booking = Booking.new
+    # @markers = { lat: potager.latitude, lng: potager.longitude }
+
   end
 
   def create
@@ -29,7 +39,7 @@ class PotagersController < ApplicationController
 
   def edit
   end
-  
+
   def update
     @potager.update(potager_params)
     redirect_to dashboard_path

@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Booking.destroy_all
+puts 'booking destroyed'
+Booking.destroy_all
+puts 'potager destroyed'
 Potager.destroy_all
 puts 'potager destroyed'
 User.destroy_all
@@ -68,6 +72,7 @@ Potager.create!(
   img_url: "https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
   user: User.first
 )
+<<<<<<< HEAD
 Potager.create!(
   name: "Les jonquilles",
   address: 'Saint-Maur',
@@ -123,3 +128,5 @@ Potager.create!(
   img_url: "https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
   user: User.first
 )
+=======
+>>>>>>> master
