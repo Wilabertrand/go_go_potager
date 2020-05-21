@@ -100,13 +100,24 @@
           <!-- /checkout -->
         </div>
       </div>
+
     </div>
+
 
     <!-- Including Bootstrap JS (with its Popper.js / jQuery dependency) so that dynamic components work -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
+  <h2>Bookez ce magnifique potager !</h2>
+  <%= simple_form_for [@potager, @booking] do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.button :submit, class:"btn-blue" %>
+  <% end %>
+
+
+	<%= link_to "Retour à la liste de potagers", potagers_path, class:"btn btn-success" %>
 
     <div id="map"
      style="width: 100%; height: 600px;"

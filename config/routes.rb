@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :potagers do
-    resources :bookings, only: [ :create]
+    resources :bookings, only: [:create]
   end
   resources :bookings, only: [:index, :destroy]
   get '/dashboard', to: 'dashboards#dashboard'

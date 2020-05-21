@@ -1,36 +1,23 @@
 
-<%# <ul>
-  <% @potagers.each do |potager| %>
-    <%# <li>= potager.name</li> %>
-  <%# end %>
-<%# </ul> %>
-
-
-
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-6">
-      <table>
-        <h1>LES POTAGERS</h1>
-        <thead>
-          <tr>
-            <th>Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @potagers.each do |potager| %>
-            <tr>
-              <td><%= potager.name %></td>
-              <% if potager.photo.attached? %>
-                <td><%= cl_image_tag potager.photo.key %></td>
-              <% end %>
-              <td><%= link_to 'Show', potager %></td>
-              <td><%= link_to 'Edit', edit_potager_path(potager) %></td>
-              <td><%= link_to 'Destroy', potager, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+    <div class="container">
+      <h1>Découvrez nos espaces à cultiver <i class="fas fa-leaf"></i></h1>
+      <div class="potager-grid">
+        <% @potagers.each do |potager| %>
+        <%= link_to potager do %>
+        <div class="card-trip">
+            <% if potager.photo.attached? %>
+              <%= cl_image_tag potager.photo.key, class:"card-img" %>
+            <% else %>
+            <%= image_tag 'jardins-partages.jpg', class:"card-img" %>
+            <% end %>
+            <div class="card-trip-infos">
+              <h2><%= potager.name %></h2>
+              <p><%= potager.surface %></p>
+              <p><%= potager.description.truncate(30)%>
+              <p class="card-trip-pricing"><%= potager.price %></p>
+            </div>
+          </div>
+          <%end%>
+        <% end %>
+        </div>
     </div>
-  </div>
-</div>
