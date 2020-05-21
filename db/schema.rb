@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2020_05_21_133505) do
     t.bigint "potager_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "start_date"
+    t.date "end_date"
     t.index ["potager_id"], name: "index_bookings_on_potager_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
