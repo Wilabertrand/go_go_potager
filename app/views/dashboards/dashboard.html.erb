@@ -1,5 +1,6 @@
 <div class="container">
 	<br>
+	<br>
 	<h1>Mes réservations</h1>
 	<br>
 	<div class="sumup">
@@ -8,28 +9,15 @@
 				<%= cl_image_tag booking.potager.photo.key, class:'card-booking-img-sumup' %>
 				<div class="card-booking-infos-sumup">
       				<h2><%= booking.potager.name %></h2>
-					<p><%= "Réservé du  au " %></p>
+					<h2>Réservé du <%= booking.start_date %> au <%= booking.end_date %></h2>
+					<p><%= link_to 'Voir', potager_path(booking.potager) %></p>
 				</div>
 			</div>
 		<% end %>
 	</div>
-	<div class="cards-dashboard">
-		<% @bookings.each do |booking| %>
-			<div class="card-potager-dashboard">
-  				<% if booking.potager.photo.attached? %>
-					<%= cl_image_tag booking.potager.photo.key, class:'card-potager-dashboard-img' %>
-  					<div class="card-potager-infos-dashboard">
-    					<div>
-      						<h2><%= booking.potager.name %></h2>
-    					</div>
-    					<h2 class="card-potager-pricing-dashboard"><%= link_to 'Voir', potager_path(booking.potager) %></h2>
-					</div>
-				<% end %>
-			</div>
-		<% end %>
-    	<%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
-  	</div>
+	<br>
 	<h1>Mes potagers en location</h1>
+	<br>
 	<br>
 	<div class="cards">
 		<% @potagers.each do |potager| %>
@@ -50,5 +38,12 @@
 		<% end %>
     	<%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
   	</div>
-  	<%= link_to 'Créez un nouveau potager', new_potager_path, class:"btn btn-primary" %>
+	<br>
+	<br>
+	<div class="btn-bottom-dashboard">
+  		<%= link_to 'Créez un nouveau potager', new_potager_path, class:"btn btn-primary" %>
+	</div>
+	<br>
+	<br>
+	<br>
 </div>

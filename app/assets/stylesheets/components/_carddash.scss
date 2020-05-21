@@ -70,8 +70,8 @@
 
 .cards-sumup {
     display: flex;
-    height: 70px;
-    width: 800px;
+    height: 120px;
+    width: 100%;
     overflow: hidden;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -79,9 +79,9 @@
 }
 
 .card-booking-infos-sumup h2 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
-    margin: 0;
+    margin-top: 10px;
   }
   
   .card-booking-infos-sumup p {
@@ -100,8 +100,8 @@
   }
 
   .card-booking-img-sumup {
-    height: 70px;
-    width: 70px;
+    height: 120px;
+    width: 360px;
     object-fit: cover;
     margin-right: 40px;
   }

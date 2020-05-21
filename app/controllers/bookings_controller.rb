@@ -14,7 +14,6 @@ class BookingsController < ApplicationController
 		@booking = Booking.new(booking_params)
 		@booking.potager = @potager
 		@booking.user = current_user
-		raise
 		if @booking.save
 			flash[:success] = "Votre potager est maintenant réservé"
 			redirect_to dashboard_path
