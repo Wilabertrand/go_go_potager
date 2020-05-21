@@ -1,12 +1,22 @@
 <div class='background-img'>
   <div class="banner">
-    <h1>Go go potager !</h1>
-    <h2>Le plaisir de cultiver</h2>
-    <%= link_to 'Découvrez nos potagers', potagers_path, class:"btn btn-success" %>
-    <p>Vous avez la main verte mais pas de jardin ? </p>
-    <p>Vous avez un jardin mais ni le temps ou l'envie de le cultiver ? </p>
-    <p>La solution est là !</p>   
-    </p>
+    <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-12 col-lg-6 text-center">
+            <h1>Go go potager !</h1>
+            <h2>Le plaisir de cultiver</h2>
+            <%= link_to 'Découvrez nos potagers', potagers_path, class:"btn btn-success center-block" %>
+            <%= form_tag potagers_path, method: :get do %>
+              <%= text_field_tag :query, params[:query], placeholder: "Rechercher" %>
+              <%#= button_tag type: "submit", %>
+              <%= submit_tag "Rechercher", class: "btn btn-success" %>
+            <% end %>
+            <p>Vous avez la main verte mais pas de jardin ? </p>
+            <p>Vous avez un jardin mais ni le temps ou l'envie de le cultiver ? </p>
+            <p>La solution est là !</p>
+          </div>
+        </div>
+      </div>
   </div>
 </div>
 <div class="container">
@@ -28,3 +38,12 @@
     </div>
   </div>
 </div>
+
+<%# <div class="fixed-action-btn smooth-scroll" style> == $0
+  <a id="scrollToTop" href="#header" class="btn-floating btn-lg wavev-effect rgba-black-strong" style="display: inline-block;">
+    <i class="fa fa-arrow-up">
+      ::before
+    </i>
+  </a>
+</div> %>
+
