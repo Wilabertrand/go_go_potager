@@ -1,3 +1,15 @@
-<h1>Edit ton potager</h1>
+<div class="container">
+  <h1>Votre potager : </h1>
 
-<%= render 'form', potager: @potager %>
+  <%= simple_form_for(@potager) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :surface %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+
+  <%#= render 'form', potager: @potager %>
+</div>

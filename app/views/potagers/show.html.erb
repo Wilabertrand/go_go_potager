@@ -1,0 +1,23 @@
+<div class="container">
+
+  <h1><%= @potager.name %></h1>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <%= cl_image_tag @potager.photo.key, class:'card-img' %>
+			<h3>Description : <%= @potager.description  %></h3>
+			<h3>Localisation: <%= @potager.address %></h3>
+			<h3>Tarif: <%= @potager.price %> €/mois</h3>
+			<h3>Surface: <%= @potager.surface %>m2</h3>
+
+    </div>
+  </div>
+
+  <h2>Bookez ce magnifique potager !</h2>
+  <%= simple_form_for [@potager, @booking] do |f| %>
+    <%= f.button :submit, class:"btn-blue" %>
+  <% end %>
+
+	<%= link_to "Retour à la liste de potagers", potagers_path, class:"btn btn-success" %>
+
+</div>
