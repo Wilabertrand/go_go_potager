@@ -6,6 +6,7 @@ class PotagersController < ApplicationController
     @potagers = Potager.geocoded
     @markers = @potagers.map do |potager|
       { lat: potager.latitude, lng: potager.longitude }
+    end
       
     if params[:query].present?
       @potagers = Potager.global_search(params[:query])
@@ -17,8 +18,7 @@ class PotagersController < ApplicationController
 
   def show
     @booking = Booking.new
-    # @markers = { lat: potager.latitude, lng: potager.longitude }
-
+    @markers = [{ lat: @potager.latitude, lng: @potager.longitude }]
   end
 
   def create
@@ -49,6 +49,7 @@ class PotagersController < ApplicationController
     @potager.destroy
     redirect_to dashboard_path
   end
+
 
 
   private
