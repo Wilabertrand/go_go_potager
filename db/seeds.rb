@@ -43,3 +43,30 @@ Potager.create!(
   img_url: "https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
   user: User.first
 )
+Potager.create!(
+  name: "La Garenne",
+  address: 'St Jean',
+  description: "2000m2 à votre disposition",
+  surface: '2000m2',
+  price: '12€/m2',
+  img_url: "https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+  user: User.first
+)
+Potager.create!(
+  name: "Les Caudalies",
+  address: 'Carantec',
+  description: "Beau champs en jachère",
+  surface: '1500m2',
+  price: '8€/m2',
+  img_url: "https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+  user: User.first
+)
+Potager.create!(
+  name: "La Beule",
+  address: 'Vierzon',
+  description: "Potager à partager",
+  surface: '1500m2',
+  price: '8€/m2',
+  img_url: "https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+  user: User.first
+)
