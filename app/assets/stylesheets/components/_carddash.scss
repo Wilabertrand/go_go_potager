@@ -1,0 +1,103 @@
+.card-potager {
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    width: 300px;
+    margin: 20px;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.cards-dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card-img {
+    width: 300px;
+    height: 100px;
+}
+
+.card-potager-dashboard {
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin-bottom: 15px;
+  }
+  
+  .card-potager-dashboard-img {
+    height: 180px;
+    width: 360px;
+    object-fit: cover;
+  }
+  
+  .card-potager-dashboard h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .card-potager-dashboard p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
+  
+  
+  .card-potager-dashboard .card-potager-infos-dashboard {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+  }
+  
+//   .card-trip-infos .card-trip-user {
+//     position: absolute;
+//     right: 16px;
+//     top: -20px;
+//     width: 40px;
+//   }
+
+
+.sumup {
+    height: 50px;
+    width: 600px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin-bottom: 15px;
+}
+
+.card-booking-infos-dashboard-sumup h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .card-booking-infos-dashboard-sumup p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
+  
+  
+  .card-booking-dashboard-sumup .card-booking-infos-dashboard-sumup {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+  }
+
+  .card-booking-dashboard-img-sumup {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+  }
