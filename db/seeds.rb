@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Booking.destroy_all
+puts 'booking destroyed'
+Booking.destroy_all
 puts 'potager destroyed'
 Potager.destroy_all
 puts 'potager destroyed'
