@@ -6,6 +6,11 @@ class PotagersController < ApplicationController
     @potagers = Potager.geocoded
     @markers = @potagers.map do |potager|
       { lat: potager.latitude, lng: potager.longitude }
+      
+    if params[:query].present?
+      @potagers = Potager.global_search(params[:query])
+    else
+      @potagers = Potager.all
     end
   end
 
@@ -34,7 +39,7 @@ class PotagersController < ApplicationController
 
   def edit
   end
-  
+
   def update
     @potager.update(potager_params)
     redirect_to dashboard_path
