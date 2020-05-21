@@ -1,34 +1,30 @@
 <div class="container">
-	<div class="row">
-		<div class="col-12 col-lg-8">
-			<h1>Mes réservations</h1>
-			<% @bookings.each do |booking| %>
-				<div class="card-potager">
-					<%= booking.potager.name %>
-					<% if booking.potager.photo.attached? %>
-						<%= cl_image_tag booking.potager.photo.key, class:'card-img' %>
-					<% end %>
-					<%= link_to 'Voir', potager_path(booking.potager) %>
-					<%#= link_to 'Destroy', potager_path(booking.potager), method: :delete, data: { confirm: 'Etes-vous sûr?' } %>
-				</div>
-			<% end %>
-		</div>
+	<h1>Mes réservations</h1>
+	<div class="cards">
+		<% @bookings.each do |booking| %>
+			<div class="card-potager">
+				<%= booking.potager.name %>
+				<% if booking.potager.photo.attached? %>
+					<%= cl_image_tag booking.potager.photo.key, class:'card-img' %>
+				<% end %>
+				<%= link_to 'Voir', potager_path(booking.potager) %>
+				<%#= link_to 'Destroy', potager_path(booking.potager), method: :delete, data: { confirm: 'Etes-vous sûr?' } %>
+			</div>
+		<% end %>
 	</div>
-	<div class="row">
-		<div class="col-12 col-lg-8">
-		<h1>Mes potagers à louer</h1>
-			<% @potagers.each do |potager| %>
-				<div class="card-potager">
-					<%= potager.name %>
-					<% if potager.photo.attached? %>
-						<%= cl_image_tag potager.photo.key, class:'card-img' %>
-					<% end %>
-					<%= link_to 'Voir', potager_path(potager) %>
-					<%= link_to 'Modifier', edit_potager_path(potager) %>
-					<%= link_to 'Supprimer', potager_path(potager), method: :delete, data: { confirm: 'Etes-vous sûr?' } %>
-				</div>
-			<% end %>
-			<%= link_to 'Créez un nouveau potager', new_potager_path %>
-		</div>
+	<h1>Mes potagers à louer</h1>
+	<div class="cards">
+		<% @potagers.each do |potager| %>
+			<div class="card-potager">
+				<%= potager.name %>
+				<% if potager.photo.attached? %>
+					<%= cl_image_tag potager.photo.key, class:'card-img' %>
+				<% end %>
+				<%= link_to 'Voir', potager_path(potager) %>
+				<%= link_to 'Modifier', edit_potager_path(potager) %>
+				<%= link_to 'Supprimer', potager_path(potager), method: :delete, data: { confirm: 'Etes-vous sûr?' } %>
+			</div>
+		<% end %>
 	</div>
+	<%= link_to 'Créez un nouveau potager', new_potager_path, class:"btn-blue" %>
 </div>

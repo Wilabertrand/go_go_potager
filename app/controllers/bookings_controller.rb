@@ -25,14 +25,14 @@ class BookingsController < ApplicationController
 
 	def destroy
 		@booking = Booking.find(params[:id])
-    @booking.destroy
-    redirect_to dashboard_path
+    	@booking.destroy
+    	redirect_to dashboard_path
 	end
 
 	private
 
 	def booking_params
-  params.require(:booking).permit(:potager, :user)
+  		params.require(:booking).permit(:potager, :user)
 	end
 
 end
