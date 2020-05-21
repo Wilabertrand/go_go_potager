@@ -1,31 +1,23 @@
 <div class="container">
 
-  <h1>Booke ton potager JFT</h1>
-  <%= simple_form_for [@potager, @booking] do |f| %>
-    <%= f.button :submit, class: "btn btn-primary" %>
-  <% end %>
   <h1><%= @potager.name %></h1>
-  <%= link_to "Back to all potagers", potagers_path %>
 
   <div class="row">
     <div class="col-sm-12 col-md-6">
-      <div class='cards'>
+      <%= cl_image_tag @potager.photo.key, class:'card-img' %>
+			<h3>Description : <%= @potager.description  %></h3>
+			<h3>Localisation: <%= @potager.address %></h3>
+			<h3>Tarif: <%= @potager.price %> €/mois</h3>
+			<h3>Surface: <%= @potager.surface %>m2</h3>
 
-              <div class='card-potager'>
-                  <%= cl_image_tag @potager.photo.key, class:'card-img' %>
-                  <p>
-                  <%= @potager.name  %>
-                  <%= @potager.description  %>
-                  <%= @potager.address %>
-                  <%= @potager.price %>
-                  <%= @potager.surface %>
-                  </p>
-              </div>
-      </div>
     </div>
   </div>
 
-  <%#= render "new", potager: @potager, review: @review %>
+  <h2>Bookez ce magnifique potager !</h2>
+  <%= simple_form_for [@potager, @booking] do |f| %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
 
+	<%= link_to "Retour à la liste de potagers", potagers_path %>
 
 </div>

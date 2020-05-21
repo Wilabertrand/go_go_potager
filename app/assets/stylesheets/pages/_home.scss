@@ -5,16 +5,12 @@
   border-radius: 4px;                        /* Small radius */
   box-shadow: 0 10px 30px rgba(0,0,0,.1); 
   background-image: linear-gradient(rgba(8, 8, 8, 0.4),rgba(54, 65, 8, 0.4)), url(asset-path("jardins-partages.jpg"));
-	color : white;
+  color : white;
 	padding: 40px; 
+	// background-size: cover;
+	// width: 100%;
 }
 
 .banner {
-	width: 1000px;
 	padding-left: 150px;
-}
-
-.btn-success {
-	color: white !important;
-	margin: 50px;	
 }
