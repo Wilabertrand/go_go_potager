@@ -3,13 +3,17 @@ class PotagersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @potagers = Potager.all
+    @potagers = Potager.geocoded
+    @markers = @potagers.map do |potager|
+      { lat: potager.latitude, lng: potager.longitude }
+    end
   end
 
 
   def show
     @booking = Booking.new
     @potager = Potager.find(params[:id])
+    # @markers = { lat: potager.latitude, lng: potager.longitude }
   end
 
   def create
