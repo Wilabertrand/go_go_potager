@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+	before_action :set_potager, only: [:show, :destroy]
 	skip_before_action :authenticate_user!, only: [:new]
 
 	# def new
@@ -8,6 +9,10 @@ class BookingsController < ApplicationController
 	# def index
 	#  	@bookings = current_user.bookings
 	# end 
+
+	def show
+	end
+
 
  	def create
 		@potager = Potager.find(params[:potager_id])
@@ -24,7 +29,8 @@ class BookingsController < ApplicationController
 	end
 
 	def destroy
-		@booking = Booking.find(params[:id])
+		@potager = Potager.find(params[:potager_id])
+		@booking.potager = @potager
     	@booking.destroy
     	redirect_to dashboard_path
 	end
@@ -34,6 +40,9 @@ class BookingsController < ApplicationController
 	def booking_params
   		params.require(:booking).permit(:potager, :user, :start_date, :end_date)
 	end
-
+  
+	def set_potager
+	  @potager = Potager.find(params[:id])
+	end
 end
 
