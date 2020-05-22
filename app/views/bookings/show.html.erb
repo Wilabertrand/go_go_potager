@@ -59,44 +59,6 @@
             <%= link_to "Back to all potagers", potagers_path %>
         </div>
 
-        <div class="col-md-4">
-          <!-- Booking card -->
-          <div class="bg-white p-3 position-sticky" style="top:15px; box-shadow: 0 5px 5px rgba(0,0,0,0.2); border-radius: 8px;">
-              <div class="d-flex justify-content-between mt-2">
-                <p><strong><%= @potager.price %>€</strong>/m²</p>
-              </div>
-
-              <p>Rappel Dates</p>
-              <%= simple_form_for [@potager, @booking] do |f| %>
-                <%= f.button :submit, class: "btn btn-primary w-100" %>
-              <% end %>
-
-            <div class="d-flex justify-content-between mt-3 border-bottom">
-              <p><%= @potager.price %>€ x <%= @potager.surface %></p>
-              <p>sum</p>
-            </div>
-
-            <div class="d-flex justify-content-between mt-3">
-              <p><strong>Total</strong></p>
-              <p><strong>sum</strong></p>
-            </div>
-          </div>
-          <!-- /checkout -->
-        </div>
-      </div>
-
-    </div>
-
-  <h2>Bookez ce magnifique potager !</h2>
-  <%= simple_form_for [@potager, @booking] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.button :submit, class:"btn-blue" %>
-  <% end %>
-
-
-	<%= link_to "Retour à la liste de potagers", potagers_path, class:"btn btn-success" %>
-
     <div id="map"
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"

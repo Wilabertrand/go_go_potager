@@ -9,8 +9,9 @@
 				<%= cl_image_tag booking.potager.photo.key, class:'card-booking-img-sumup' %>
 				<div class="card-booking-infos-sumup">
       				<h2><%= booking.potager.name %></h2>
-					<h2>Réservé du <%= booking.start_date %> au <%= booking.end_date %></h2>
-					<p><%= link_to 'Voir', potager_path(booking.potager) %></p>
+					<h2>Réservé du <%= booking.start_date %> au <%= booking.end_date %> pour un montant de <%= booking.potager.price %>€</h2>
+					<%#= link_to 'Voir', potager_path(booking.potager) %>
+					<p><%= link_to 'Voir', booking_path(booking.potager) %> | <%= link_to 'Annuler', booking_path(booking.potager), method: :delete, data: { confirm: 'Etes-vous sûr?' } %></p>
 				</div>
 			</div>
 		<% end %>
@@ -19,7 +20,7 @@
 	<h1>Mes potagers en location</h1>
 	<br>
 	<br>
-	<div class="cards">
+	<div class="cards-dashboard">
 		<% @potagers.each do |potager| %>
 			<div class="card-potager-dashboard">
   				<% if potager.photo.attached? %>
