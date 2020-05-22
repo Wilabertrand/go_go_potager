@@ -7,7 +7,6 @@
         </div>
       </div>
       <div class="row">
-
         <%= @article.photos.each do |photo| %>
          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>    
           <div class="col-md-6">          
@@ -27,7 +26,6 @@
                 <div class="carousel-item">
                   <%= image_tag @potager.photos, class:"d-block w-100" %>
                 </div>
-                
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -39,6 +37,7 @@
               </a>
             </div>
           </div>
+
         <% end %>
           <div class="col-md-6">
 
