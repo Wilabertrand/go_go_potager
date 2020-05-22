@@ -11,3 +11,12 @@
 	display: flex;
 	justify-content: center;
 }
+
+.btn-grad {
+	background-image: linear-gradient(to right, #06afaf 0%, #00c795 100%);
+	color: white
+}
+
+.btn-grad:hover { 
+	background-position: right center;
+}

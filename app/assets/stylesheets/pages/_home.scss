@@ -1,5 +1,10 @@
 // Specific CSS for your home-page
 
+.titre {
+    size: 40px;
+    font-family: $font;
+}
+
 .background-img {
   //background-image: url(asset-path("jardins-partages.jpg"));
   border-radius: 4px;                        /* Small radius */
@@ -17,7 +22,8 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 130px 0;
+  padding: 150px 0;
+  height: 340px;
 }
 
 .banner h1 {
@@ -60,8 +66,9 @@
 }
 
 .search-form-control {
-  position: relative;
+  position: absolute;
   width: 800px;
+  top: 450px;
 }
 
 .search-form-control .btn {
@@ -85,6 +92,20 @@
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
+
+$font: 'Poppins', sans-serif;
+
+.intro {
+  line-height: 140%;
+  background: linear-gradient(to right, #1EDD88 0%, #1da6b8 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font: {
+		size: 30px;
+		family: $font;
+	};
+}
+
 
 // .card-trip p {
 //   font-size: 12px;
