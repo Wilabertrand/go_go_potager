@@ -6,7 +6,9 @@
 	<div class="sumup">
 		<% @bookings.each do |booking| %>
 			<div class="cards-sumup">
-				<%= cl_image_tag booking.potager.photo.key, class:'card-booking-img-sumup' %>
+			<% if booking.potager.photos.present? %>
+				<%= cl_image_tag booking.potager.photos.first.key, class:'card-booking-img-sumup' %>
+				<% end %>
 				<div class="card-booking-infos-sumup">
       				<h2><%= booking.potager.name %></h2>
 					<h2>Réservé du <%= booking.start_date %> au <%= booking.end_date %> pour un montant de <%= booking.potager.price %>€</h2>
@@ -23,8 +25,8 @@
 	<div class="cards-dashboard">
 		<% @potagers.each do |potager| %>
 			<div class="card-potager-dashboard">
-  				<% if potager.photo.attached? %>
-					<%= cl_image_tag potager.photo.key, class:'card-potager-dashboard-img' %>
+  				<% if potager.photos.present? && potager.photos.first.attached? %>
+					<%= cl_image_tag potager.photos.first.key, class:'card-potager-dashboard-img' %>
   					<div class="card-potager-infos-dashboard">
     					<div>
       						<h2><%= potager.name %></h2>

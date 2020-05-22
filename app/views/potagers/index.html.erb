@@ -7,8 +7,8 @@
       <% @potagers.each do |potager| %>
         <%= link_to potager do %>
           <div class="card-trip">
-            <% if potager.photo.attached? %>
-              <%= cl_image_tag potager.photo.key, class:"card-img" %>
+            <% if potager.photos.present? && potager.photos.first.attached? %>
+              <%= cl_image_tag potager.photos.first.key, class:"card-img" %>
             <% else %>
             <%= image_tag 'jardins-partages.jpg', class:"card-img" %>
             <% end %>
