@@ -1,5 +1,5 @@
-    <!-- Name / Address -->
-    <div class="container py-2">
+<!-- Name / Address -->
+    <div class="container py-4">
       <div class="row">
         <div class="col-md-12">
           <h1><%= @potager.name %></h1>
@@ -7,68 +7,99 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-8">
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <%= image_tag @potager.photos, class:"d-block w-100" %>
+        <%= @article.photos.each do |photo| %>
+         <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>    
+          <div class="col-md-6">          
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner" style="border-radius: 30px;">
+                <div class="carousel-item active">
+                  <%= image_tag @potager.photos, class:"d-block w-100" %>
+                </div>
+                <div class="carousel-item">
+                  <%= image_tag @potager.photos, class:"d-block w-100" %>
+                </div>
+                <div class="carousel-item">
+                  <%= image_tag @potager.photos, class:"d-block w-100" %>
+                </div>
               </div>
-              <div class="carousel-item">
-                <%= image_tag @potager.photos, class:"d-block w-100" %>
-              </div>
-              <div class="carousel-item">
-                <%= image_tag @potager.photos, class:"d-block w-100" %>
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-          <div class="col-md-4">
-            <div class="galery">
-              <%= image_tag @potager.photos, class:"d-block w-100" %>
-              <%= image_tag @potager.photos, class:"d-block w-100" %>
-              <%= image_tag @potager.photos, class:"d-block w-100" %>
-              <%= image_tag @potager.photos, class:"d-block w-100" %>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
           </div>
+
+        <% end %>
+          <div class="col-md-6">
+
+          <div></div>
+
+            <div class="d-flex align-content-between flex-wrap col-md-12">
+
+              <div class="col-md-6 p-1">
+                <%= image_tag @potager.photos, class:"d-block w-100" %>
+              </div>
+
+              <div class="col-md-6 p-1">
+                <%= image_tag @potager.photos, class:"d-block w-100" %>
+              </div>
+
+              <div class="col-md-6 p-1">
+                <%= image_tag @potager.photos, class:"d-block w-100" %>
+              </div>
+
+              <div class="col-md-6 p-1">
+                <%= image_tag @potager.photos, class:"d-block w-100" %>
+              </div>
+
+            </div>
+        </div>      
       </div>
 
       <div class="row">
         <div class="col-md-8">
           <!-- Potager card -->
-            <div class="d-flex justify-content mt-3 mb-3">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <p>Proposé par USER + PHOTO USER</p>
+            <div class="d-flex pt-4 pb-4 border-bottom">
+              <div><%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></div>
+              <div class="pl-2"><p>Proposé par USER + PHOTO USER</p></div>
             </div>
 
-            <div class="d-flex justify-content m border-top">
+            <div class="pt-4 pb-4 border-bottom">
+
               <p><%= @potager.description %></p>
+              <%= link_to "Retour aux potagers", potagers_path, class:"btn btn-secondary" %>
             </div>
-            <%= link_to "Back to all potagers", potagers_path %>
+
+            <div class="pt-4 pb-4 border-bottom">
+              <h3>Vos dates</h3>
+              <%= simple_form_for [@potager, @booking] do |f| %>
+                <%= f.input :start_date %>
+                <%= f.input :end_date %>
+                <%= f.button :submit, "Réserver", class:"btn btn-primary" %>
+              <% end %>
+            </div>
         </div>
 
         <div class="col-md-4">
           <!-- Booking card -->
-          <div class="bg-white p-3 position-sticky" style="top:15px; box-shadow: 0 5px 5px rgba(0,0,0,0.2); border-radius: 8px;">
+          <div class="bg-white p-4 position-sticky" style="top:0; box-shadow: 0 5px 5px rgba(0,0,0,0.2); border-radius: 8px;">
               <div class="d-flex justify-content-between mt-2">
                 <p><strong><%= @potager.price %>€</strong>/m²</p>
               </div>
 
-              <p>Rappel Dates</p>
               <%= simple_form_for [@potager, @booking] do |f| %>
-                <%= f.button :submit, class: "btn btn-primary w-100" %>
+                <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>      
+                <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>
+                <%= f.button :submit, "Réserver", class: "btn btn-primary w-100" %>
               <% end %>
 
             <div class="d-flex justify-content-between mt-3 border-bottom">
@@ -84,22 +115,18 @@
           <!-- /checkout -->
         </div>
       </div>
-
+      <div class="pt-4 pb-4">
+        <div class="pb-2"><h3>Emplacement</h3></div>
+        <div id="map"
+          style="width: 100%; height: 600px; border-radius: 30px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
     </div>
 
-  <h2>Bookez ce magnifique potager !</h2>
-  <%= simple_form_for [@potager, @booking] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.button :submit, class:"btn-blue" %>
-  <% end %>
-
-
-	<%= link_to "Retour à la liste de potagers", potagers_path, class:"btn btn-success" %>
-
-    <div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+    <!-- Including Bootstrap JS (with its Popper.js / jQuery dependency) so that dynamic components work -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 

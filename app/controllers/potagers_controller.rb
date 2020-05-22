@@ -7,6 +7,7 @@ class PotagersController < ApplicationController
     @markers = @potagers.map do |potager|
       { lat: potager.latitude, lng: potager.longitude }
     end
+ 
     if params[:query].present?
       @potagers = Potager.global_search(params[:query])
     else
@@ -17,8 +18,7 @@ class PotagersController < ApplicationController
 
   def show
     @booking = Booking.new
-    # @markers = { lat: potager.latitude, lng: potager.longitude }
-
+    @markers = [{ lat: @potager.latitude, lng: @potager.longitude }]
   end
 
   def create
@@ -51,10 +51,12 @@ class PotagersController < ApplicationController
   end
 
 
+
   private
 
   def potager_params
-    params.require(:potager).permit(:name, :address, :description, :price, :surface, photos: [])
+    params.require(:potager).permit(:name, :address, :description, :price, :surface, photos: [], :latitude, :longitude)
+
   end
 
   def set_potager

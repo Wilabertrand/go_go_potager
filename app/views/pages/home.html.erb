@@ -1,41 +1,43 @@
 <div class='background-img'>
   <div class="banner">
     <div class="container">
-      <div class="row justify-content-center">
-          <div class="col-12 col-lg-6 text-center">
-            <h1>Go go potager !</h1>
-            <h2>Le plaisir de cultiver</h2>
-            <%= link_to 'Découvrez nos potagers', potagers_path, class:"btn btn-success center-block" %>
-            <%= form_tag potagers_path, method: :get do %>
-              <%= text_field_tag :query, params[:query], placeholder: "Rechercher" %>
-              <%#= button_tag type: "submit", %>
-              <%= submit_tag "Rechercher", class: "btn btn-success" %>
-            <% end %>
-            <p>Vous avez la main verte mais pas de jardin ? </p>
-            <p>Vous avez un jardin mais ni le temps ou l'envie de le cultiver ? </p>
-            <p>La solution est là !</p>
-          </div>
-        </div>
+      <div class="pb-5">
+        <h1 class="titre">Go Go Potager !</h1>
+        <h2 class="titre">Le plaisir de cultiver</h2>
+        <%= link_to 'Découvrez nos potagers', potagers_path, class:"btn btn-grad" %>
       </div>
+      <div class="pb-2">
+        <%= simple_form_for :search, url: potagers_path, method: :get do %>
+        <div class="search-form-control form-group">
+          <%= text_field_tag :query, params[:query], class: "form-control string required", placeholder: "Où plantez-vous ?" %>
+            <%# <i class="fas fa-search"></i> %>
+            <%= submit_tag "Rechercher", class: "btn btn-grad"%>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
-<div class="container">
+<div class="container mt-5">
+  <h3 class="intro">Vous avez la main verte mais pas de jardin ?<br>
+  Vous avez un jardin mais pas le temps de le cultiver ?<br>
+  Bienvenue !</h3>
+
   <div class='cards'>
-    <div class='card-potager'>
-      <%= image_tag "potager1.jpg", class:'card-img' %>
-      <p>Plantez de sublimes fleurs
-      <br>Dès 19€/ mois </p>
-    </div>
-    <div class='card-potager'>
-      <%= image_tag "potager2.jpg", class:'card-img' %>
-      <p>Créez votre jardin zen
-      <br>Dès 29€/ mois </p>
-    </div>
-    <div class='card-potager'>
-      <%= image_tag "potager4.jpg", class:'card-img'  %>
-      <p>Cultivez votre potager prêt à être béché
-      <br>Dès 39€/ mois </p>
-    </div>
+  <div class='card-potager'>
+    <%= image_tag "potager1.jpg", class:'card-img' %>
+    <p>Plantez de sublimes fleurs
+    <br>Dès 19€/ mois </p>
+  </div>
+  <div class='card-potager'>
+    <%= image_tag "potager2.jpg", class:'card-img' %>
+    <p>Créez votre jardin zen
+    <br>Dès 29€/ mois </p>
+  </div>
+  <div class='card-potager'>
+    <%= image_tag "potager4.jpg", class:'card-img'  %>
+    <p>Cultivez votre potager prêt à être béché
+    <br>Dès 39€/ mois </p>
   </div>
 </div>
 
