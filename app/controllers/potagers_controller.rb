@@ -55,7 +55,7 @@ class PotagersController < ApplicationController
   private
 
   def potager_params
-    params.require(:potager).permit(:name, :address, :description, :price, :surface, :photo)
+    params.require(:potager).permit(:name, :address, :description, :price, :surface, :photo, :latitude, :longitude)
   end
 
   def set_potager
