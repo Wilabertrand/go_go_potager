@@ -16,7 +16,7 @@
 
 $font: 'Poppins', sans-serif;
 
-li {
+.grad {
   background: linear-gradient(to right, rgb(165, 165, 165) 0%, rgb(165, 165, 165) 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -26,7 +26,7 @@ li {
 	};
 }
 
-li:hover { 
+.grad:hover { 
   background: linear-gradient(to right, #1EDD88 50%, #1da6b8 100%);
   -webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;

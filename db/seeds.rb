@@ -29,7 +29,7 @@ potager1 = Potager.create!(
   file = URI.open('https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
   potager1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
-  file = URI.open('https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
+  file = URI.open('https://www.solvivant.fr/wp-content/uploads/2018/08/permaculture-potager.jpg')
   potager1.photos.attach(io: file, filename: 'nes2.png', content_type: 'image/png')
 
   file = URI.open('https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')

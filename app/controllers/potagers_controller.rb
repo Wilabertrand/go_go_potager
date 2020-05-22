@@ -4,15 +4,13 @@ class PotagersController < ApplicationController
 
   def index
     @potagers = Potager.geocoded
+    if params[:query].present?
+      @potagers = Potager.global_search(params[:query])
+    end
     @markers = @potagers.map do |potager|
       { lat: potager.latitude, lng: potager.longitude }
     end
- 
-    if params[:query].present?
-      @potagers = Potager.global_search(params[:query])
-    else
-      @potagers = Potager.all
-    end
+  
   end
 
 
