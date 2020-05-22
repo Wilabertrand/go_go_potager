@@ -24,11 +24,19 @@ potager1 = Potager.create!(
   description: "Bonjour, Nous avons un grand terrain près de Rostrenen avec un jardin, de la forêt et une rivière pas loin. Nous n’avons pas d’outil de jardinage pour l’ instant mais il y a un cabanon, et surtout une grande envie d’apprendre à jardiner en famille et de pouvoir semer des graines de permaculture humaine et écologique  ! Si ce terrain de jeu peut vous intéresser, vous êtes les bienvenu.e.s !",
   surface: '550m2',
   price: '30€/m2',
-  img_url: "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
   user: User.first
 )
   file = URI.open('https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
-  potager1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  potager1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+
+  file = URI.open('https://www.solvivant.fr/wp-content/uploads/2018/08/permaculture-potager.jpg')
+  potager1.photos.attach(io: file, filename: 'nes2.png', content_type: 'image/png')
+
+  file = URI.open('https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
+  potager1.photos.attach(io: file, filename: 'nes3.png', content_type: 'image/png')
+
+  file = URI.open('https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
+  potager1.photos.attach(io: file, filename: 'nes4.png', content_type: 'image/png')
 
 potager2 = Potager.create!(
   name: "Les jonquilles",
@@ -36,11 +44,10 @@ potager2 = Potager.create!(
   description: "Nous avons un grand jardin,  et l’idée qu’il faut partage,  nous accueillons une personne sérieuse, qui aime la nature et n’utilisera pas d’intrants chimiques, ,  on vous passera un bout de terrain, permacuture bienvenue. En échange de ce que vous voudrez ! bien cordialement ",
   surface: '24m2',
   price: '10€/m2',
-  img_url: "https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
   user: User.first
 )
 file = URI.open('https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
-  potager2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  potager2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 potager3 = Potager.create!(
   name: "Fermex",
@@ -48,12 +55,11 @@ potager3 = Potager.create!(
   description: "Je n’ai plus le temps de m’occuper du jardin depuis un an, avant j’y avais fait un mini potager avec des tomates, courges, betteraves et aromatiques. Il reste aujourd’hui un kiwi male, un framboisier, un groseiller et de la menthe.  Le jardin à la particularité d’être en pente, divisé en 3 palier + une platebande.  Nous avons deux grands récupérateurs d’eau de pluie et un cabanon pour ranger les outils (quelques outils basiques et un taille haie ). Le jardin est disponible des à présent, les créneaux occupés sont à définir avec la personne qui souhaite y jardiner.",
   surface: '1000m2',
   price: '5€/m2',
-  img_url: "https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
   user: User.first
 )
 
 file = URI.open('https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
-  potager3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  potager3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 potager4 = Potager.create!(
   name: "La Garenne",
@@ -61,11 +67,10 @@ potager4 = Potager.create!(
   description: "2000m2 à votre disposition",
   surface: '2000m2',
   price: '12€/m2',
-  img_url: "https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
   user: User.first
 )
 file = URI.open('https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
-  potager4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  potager4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 potager5 = Potager.create!(
   name: "Les Caudalies",
@@ -73,11 +78,10 @@ potager5 = Potager.create!(
   description: "Bonjour, Nous avons un grand terrain près de Rostrenen avec un jardin, de la forêt et une rivière pas loin. Nous n’avons pas d’outil de jardinage pour l’ instant mais il y a un cabanon, et surtout une grande envie d’apprendre à jardiner en famille et de pouvoir semer des graines de permaculture humaine et écologique  ! Si ce terrain de jeu peut vous intéresser, vous êtes les bienvenu.e.s !",
   surface: '1500m2',
   price: '8€/m2',
-  img_url: "https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
   user: User.first
 )
 file = URI.open('https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
-  potager5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  potager5.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 potager6 = Potager.create!(
   name: "La Beule",
@@ -85,8 +89,7 @@ potager6 = Potager.create!(
   description: "Je n’ai plus le temps de m’occuper du jardin depuis un an, avant j’y avais fait un mini potager avec des tomates, courges, betteraves et aromatiques. Il reste aujourd’hui un kiwi male, un framboisier, un groseiller et de la menthe.  Le jardin à la particularité d’être en pente, divisé en 3 palier + une platebande.  Nous avons deux grands récupérateurs d’eau de pluie et un cabanon pour ranger les outils (quelques outils basiques et un taille haie ). Le jardin est disponible des à présent, les créneaux occupés sont à définir avec la personne qui souhaite y jardiner.",
   surface: '1500m2',
   price: '8€/m2',
-  img_url: "https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
   user: User.first
 )
 file = URI.open('https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
-  potager6.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  potager6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
