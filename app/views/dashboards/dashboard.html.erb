@@ -25,7 +25,7 @@
 	<div class="cards-dashboard">
 		<% @potagers.each do |potager| %>
 			<div class="card-potager-dashboard">
-  				<% if potager.photos.present? && potager.photos.first.attached? %>
+  				<% if potager.photos.present? && potager.photos.attached? %>
 					<%= cl_image_tag potager.photos.first.key, class:'card-potager-dashboard-img' %>
   					<div class="card-potager-infos-dashboard">
     					<div>

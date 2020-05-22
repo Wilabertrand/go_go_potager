@@ -29,8 +29,8 @@
       <% @potagers.each do |potager| %>
         <%= link_to potager, style: "width: 32%;" do %>
           <div class="card-trip">
-            <% if potager.photo.attached? %>
-              <%= cl_image_tag potager.photo.key, class:"card-img" %>
+            <% if potager.photos.present? && potager.photos.attached? %>
+              <%= cl_image_tag potager.photos.first.key, class:"card-img" %>
             <% else %>
             <%= image_tag 'jardins-partages.jpg', class:"card-img" %>
             <% end %>
