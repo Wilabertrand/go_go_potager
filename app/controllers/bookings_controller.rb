@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
 	end
 
 	def destroy
-		#@potager = Potager.find(params[:potager_id])
+		@potager = Potager.find(params[:potager_id])
 		@booking.potager = @potager
     	@booking.destroy
     	redirect_to dashboard_path

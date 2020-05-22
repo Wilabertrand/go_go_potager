@@ -10,9 +10,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li>
-        <%= link_to "Louez votre potager", new_potager_path, class: "nav-link" %>
-      </li>
+      <%= link_to "Voir tous les potagers     | ", potagers_path, class: "nav-link" %><%= link_to "Louez votre potager                 ", new_potager_path, class: "nav-link" %>
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <%= image_tag "louise.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
