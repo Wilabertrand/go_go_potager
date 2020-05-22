@@ -7,6 +7,7 @@
         </div>
       </div>
       <div class="row">
+
         <%= @article.photos.each do |photo| %>
          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>    
           <div class="col-md-6">          
@@ -26,6 +27,7 @@
                 <div class="carousel-item">
                   <%= image_tag @potager.photos, class:"d-block w-100" %>
                 </div>
+                
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -71,8 +73,9 @@
               <div><%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></div>
               <div class="pl-2"><p>Proposé par USER + PHOTO USER</p></div>
             </div>
-            
+
             <div class="pt-4 pb-4 border-bottom">
+
               <p><%= @potager.description %></p>
               <%= link_to "Retour aux potagers", potagers_path, class:"btn btn-secondary" %>
             </div>
@@ -123,8 +126,8 @@
       </div>
     </div>
 
-
     <!-- Including Bootstrap JS (with its Popper.js / jQuery dependency) so that dynamic components work -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+

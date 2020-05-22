@@ -7,7 +7,7 @@ class PotagersController < ApplicationController
     @markers = @potagers.map do |potager|
       { lat: potager.latitude, lng: potager.longitude }
     end
-      
+ 
     if params[:query].present?
       @potagers = Potager.global_search(params[:query])
     else
