@@ -26,7 +26,7 @@ potager1 = Potager.create!(
   price: '30€/m2',
   user: User.first
 )
-  file = URI.open('https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
+  file = URI.open('https://cdn.britannica.com/42/91642-050-332E5C66/Keukenhof-Gardens-Lisse-Netherlands.jpg')
   potager1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   file = URI.open('https://www.solvivant.fr/wp-content/uploads/2018/08/permaculture-potager.jpg')
@@ -46,7 +46,7 @@ potager2 = Potager.create!(
   price: '10€/m2',
   user: User.first
 )
-file = URI.open('https://www.lovethegarden.com/sites/default/files/styles/og_image/public/content/articles/shutterstock_132954026.jpg?itok=wZGtWjMf')
+file = URI.open('https://i-dja.unimedias.fr/sites/art-de-vivre/files/styles/large/public/dja_parc-monceau-paris_mp.jpg?auto=compress%2Cformat&crop=faces%2Cedges&cs=srgb&fit=crop&h=598&w=900')
   potager2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 potager3 = Potager.create!(
@@ -69,7 +69,7 @@ potager4 = Potager.create!(
   price: '12€/m2',
   user: User.first
 )
-file = URI.open('https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
+file = URI.open('https://edito.seloger.com/sites/default/files/styles/manual_crop_735x412/public/article/image/jardins-therapeutiques-lead.jpg?itok=jBLIBjBd')
   potager4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 potager5 = Potager.create!(
@@ -80,7 +80,7 @@ potager5 = Potager.create!(
   price: '8€/m2',
   user: User.first
 )
-file = URI.open('https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
+file = URI.open('https://www.cdeco.fr/wp-content/uploads/2018/04/Massif-de-crocosmia-et-de-monarde-Atelier-Jardin-jardin-color%C3%A9-BGRUSTICA.JPEG05.jpg')
   potager5.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 potager6 = Potager.create!(
