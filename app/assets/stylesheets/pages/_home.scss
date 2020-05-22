@@ -16,21 +16,22 @@
 
 .banner {
   background-size: cover;
-  width: auto;
+  background-position: center;
+  padding: 130px 0;
 }
 
 .banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 60px;
   font-weight: bold;
 }
 
-.banner p {
-  font-size: 20px;
+.banner h2 {
+  font-size: 30px;
   color: white;
-  opacity: .7;
+  opacity: .9;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
@@ -56,6 +57,33 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+}
+
+.search-form-control {
+  position: relative;
+  width: 800px;
+}
+
+.search-form-control .btn {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  right: 6px;
+  border-radius: 25px;
+}
+
+.search-form-control .form-control {
+  height: 3.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #E7E7E7;
+  border-radius: 40px;
+  padding: 30px;
+}
+
+.search-form-control .form-control:focus {
+  border: 1px solid #1EDD88;
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 // .card-trip p {
