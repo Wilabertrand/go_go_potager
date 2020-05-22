@@ -4,7 +4,7 @@
       <div class="pb-5">
         <h1 class="titre">Go Go Potager !</h1>
         <h2 class="titre">Le plaisir de cultiver</h2>
-        <%= link_to 'Découvrez nos potagers', potagers_path, class:"btn btn-grad" %>
+        <%= link_to 'Découvrez nos potagers', potagers_path, class:"btn btn-grad", data: { turbolinks: 'false' } %>
       </div>
       <div class="pb-2">
         <%= simple_form_for :search, url: potagers_path, method: :get do %>
@@ -27,7 +27,7 @@
   <div class="content py-5">
     <div class="potager-grid" style="display: flex; width: 100%; justify-content: space-between">
       <% @potagers.each do |potager| %>
-        <%= link_to potager, style: "width: 32%;" do %>
+        <%= link_to potager_path(potager), style: "width: 32%;", data: { turbolinks: 'false' } do %>
           <div class="card-trip">
             <% if potager.photos.present? && potager.photos.attached? %>
               <%= cl_image_tag potager.photos.first.key, class:"card-img" %>

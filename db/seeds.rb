@@ -32,10 +32,10 @@ potager1 = Potager.create!(
   file = URI.open('https://www.solvivant.fr/wp-content/uploads/2018/08/permaculture-potager.jpg')
   potager1.photos.attach(io: file, filename: 'nes2.png', content_type: 'image/png')
 
-  file = URI.open('https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
+  file = URI.open('https://edito.seloger.com/sites/default/files/styles/manual_crop_735x412/public/article/image/jardins-therapeutiques-lead.jpg?itok=jBLIBjBd')
   potager1.photos.attach(io: file, filename: 'nes3.png', content_type: 'image/png')
 
-  file = URI.open('https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
+  file = URI.open('https://www.cdeco.fr/wp-content/uploads/2018/04/Massif-de-crocosmia-et-de-monarde-Atelier-Jardin-jardin-color%C3%A9-BGRUSTICA.JPEG05.jpg')
   potager1.photos.attach(io: file, filename: 'nes4.png', content_type: 'image/png')
 
 potager2 = Potager.create!(
@@ -46,7 +46,7 @@ potager2 = Potager.create!(
   price: '10€/m2',
   user: User.first
 )
-file = URI.open('https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
+file = URI.open('https://www.lovethegarden.com/sites/default/files/styles/og_image/public/content/articles/shutterstock_132954026.jpg?itok=wZGtWjMf')
   potager2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 potager3 = Potager.create!(
@@ -58,7 +58,7 @@ potager3 = Potager.create!(
   user: User.first
 )
 
-file = URI.open('https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
+file = URI.open('https://i2.wp.com/creapills.com/wp-content/uploads/2020/05/plus-grand-jardin-de-tulipes-albert-dros.png?fit=770%2C433&ssl=1')
   potager3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 potager4 = Potager.create!(
