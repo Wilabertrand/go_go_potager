@@ -7,8 +7,8 @@
         </div>
       </div>
       <div class="row">
-
-        <%= @article.photos.each do |photo| %>
+        <% if @potager.photos.count > 1%>
+        <%= @potager.photos.each do |photo| %>
          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>    
           <div class="col-md-6">          
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -39,6 +39,9 @@
               </a>
             </div>
           </div>
+        <% end %>
+        <% else %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
         <% end %>
           <div class="col-md-6">
 

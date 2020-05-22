@@ -23,23 +23,31 @@
   Vous avez un jardin mais pas le temps de le cultiver ?<br>
   Bienvenue !</h3>
 
-  <div class='cards'>
-  <div class='card-potager'>
-    <%= image_tag "potager1.jpg", class:'card-img' %>
-    <p>Plantez de sublimes fleurs
-    <br>Dès 19€/ mois </p>
+
+  <div class="content py-5">
+    <div class="potager-grid" style="display: flex; width: 100%; justify-content: space-between">
+      <% @potagers.each do |potager| %>
+        <%= link_to potager, style: "width: 32%;" do %>
+          <div class="card-trip">
+            <% if potager.photo.attached? %>
+              <%= cl_image_tag potager.photo.key, class:"card-img" %>
+            <% else %>
+            <%= image_tag 'jardins-partages.jpg', class:"card-img" %>
+            <% end %>
+            <div class="card-trip-infos">
+              <h2><%= potager.name %></h2>
+              <p><%= potager.surface %></p>
+              <p><%= potager.description.truncate(30)%>
+              <h2 class="card-trip-pricing"><%= potager.price %>€</h2>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+            </div>
+          </div>
+        <%end%>
+      <% end %>
+    </div>
   </div>
-  <div class='card-potager'>
-    <%= image_tag "potager2.jpg", class:'card-img' %>
-    <p>Créez votre jardin zen
-    <br>Dès 29€/ mois </p>
-  </div>
-  <div class='card-potager'>
-    <%= image_tag "potager4.jpg", class:'card-img'  %>
-    <p>Cultivez votre potager prêt à être béché
-    <br>Dès 39€/ mois </p>
-  </div>
-</div>
+
+
 
 <%# <div class="fixed-action-btn smooth-scroll" style> == $0
   <a id="scrollToTop" href="#header" class="btn-floating btn-lg wavev-effect rgba-black-strong" style="display: inline-block;">
