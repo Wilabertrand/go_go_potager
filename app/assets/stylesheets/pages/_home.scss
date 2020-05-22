@@ -1,5 +1,10 @@
 // Specific CSS for your home-page
 
+.titre {
+    size: 40px;
+    font-family: $font;
+}
+
 .background-img {
   //background-image: url(asset-path("jardins-partages.jpg"));
   border-radius: 4px;                        /* Small radius */
@@ -16,21 +21,23 @@
 
 .banner {
   background-size: cover;
-  width: auto;
+  background-position: center;
+  padding: 150px 0;
+  height: 340px;
 }
 
 .banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 60px;
   font-weight: bold;
 }
 
-.banner p {
-  font-size: 20px;
+.banner h2 {
+  font-size: 30px;
   color: white;
-  opacity: .7;
+  opacity: .9;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
@@ -58,6 +65,48 @@
   font-weight: bold;
   margin: 0;
 }
+
+.search-form-control {
+  position: absolute;
+  width: 800px;
+  top: 450px;
+}
+
+.search-form-control .btn {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  right: 6px;
+  border-radius: 25px;
+}
+
+.search-form-control .form-control {
+  height: 3.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #E7E7E7;
+  border-radius: 40px;
+  padding: 30px;
+}
+
+.search-form-control .form-control:focus {
+  border: 1px solid #1EDD88;
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+$font: 'Poppins', sans-serif;
+
+.intro {
+  line-height: 140%;
+  background: linear-gradient(to right, #1EDD88 0%, #1da6b8 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font: {
+		size: 30px;
+		family: $font;
+	};
+}
+
 
 // .card-trip p {
 //   font-size: 12px;

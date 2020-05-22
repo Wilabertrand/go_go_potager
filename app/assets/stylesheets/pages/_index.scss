@@ -1,8 +1,41 @@
 // Import page-specific CSS files here.
 @import "home";
 
-h1 {
-    font-weight: bold;
-    color:#58d48f;
-    padding: 20px;
+.intro-index {
+    line-height: 150%;
+    background: linear-gradient(to right, #1EDD88 0%, #1da6b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font: {
+          size: 40px;
+          family: $font;
+      };
+  }
+
+.content {
+    display: flex
+  }
+
+#map {
+    height: 100vh;
+    position: sticky;
+    top: 0
 }
+
+
+
+// @media (min-width: 576px) {
+//     .cards {
+//         grid-template-columns: 1fr;
+//     }
+// }
+
+// @media (min-width: 1200px) {
+//     .cards {
+//         grid-template-columns: 1fr;
+//     }
+
+//     #map {
+//         display: block;
+//     }
+// }
